@@ -34,7 +34,7 @@
     buttonBeep = [self setupAudioPlayerWithFile:@"ButtonTap" type:@"wav"];
     secondBeep = [self setupAudioPlayerWithFile:@"SecondBeep" type:@"wav"];
     backgroundMusic = [self setupAudioPlayerWithFile:@"HallOfTheMountainKing" type:@"mp3"];
-
+    
     [self setupGame];
 }
 
@@ -51,7 +51,7 @@
     {
         //The next 2 lines are written because 30 persists for 2 seconds rather than 1 sec.
         //To avoid that timer is set to 29 when the tap button is clicked.
-        seconds=9;
+        seconds=29;
         timeLabel.text=[NSString stringWithFormat:@"Time: %lu", seconds];
         
         timer=[NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(decrementTime) userInfo:nil repeats:YES];
@@ -63,7 +63,7 @@
 
 - (void)setupGame
 {
-    seconds=10;
+    seconds=30;
     count=0;
     timeLabel.text=[NSString stringWithFormat:@"Time: %lu", seconds];
     scoreLabel.text=[NSString stringWithFormat:@"Score\n%lu",count];
